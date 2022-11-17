@@ -1,0 +1,92 @@
+@mixin prefixing($prop, $value) {
+    -webkit-#{$prop}: #{$value};
+    -moz-#{$prop}: #{$value};
+    -ms-#{$prop}: #{$value};
+    -o-#{$prop}: #{$value};
+    #{$prop}: #{$value};
+}
+
+@mixin flex-center-row {
+    @include prefixing(display, flex);
+    @include prefixing(justify-content, center);
+    @include prefixing(align-items, center);
+}
+
+@mixin flex-center-column {
+    @include flex-center-row;
+    @include prefixing(flex-direction, column);
+}
+
+@mixin flex-between-row {
+    @include prefixing(display, flex);
+    @include prefixing(justify-content, space-between);
+    @include prefixing(align-items, center);
+}
+
+@mixin flex-between-column {
+    @include flex-between-row;
+    @include prefixing(flex-direction, column);
+}
+
+@mixin grid-columns($columns-number) {
+    display: grid;
+    grid-template-columns: repeat($columns-number, 1fr);
+}
+
+@mixin reset-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin fade($type) {
+    @if $type == "hide" {
+        visibility: hidden;
+        opacity: 0;
+    } @else if $type == "show" {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@mixin transition($prop, $time, $func) {
+    @if $func == ease {
+        @include prefixing(transition, $prop #{$time}s ease);
+    } @else if $func == ease-in {
+        @include prefixing(transition, $prop #{$time}s ease-in);
+    } @else if $func == ease-in-out {
+        @include prefixing(transition, $prop #{$time}s ease-in-out);
+    } @else if $func == ease-out {
+        @include prefixing(transition, $prop #{$time}s ease-out);
+    } @else if $func == linear {
+        @include prefixing(transition, $prop #{$time}s linear);
+    }
+}
+
+@mixin breakpoint($point) {
+    @if $point == tablet {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    }
+
+    @if $point == mobile {
+        @media only screen and (max-width: 576px) {
+            @content;
+        }
+    }
+
+    @if $point == large {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+@mixin coloring($name, $value) {
+    @if $value == "bg" {
+        background-color: map-get($colors, $name);
+    } @else if $value == "txt" {
+        color: map-get($colors, $name);
+    }
+}
