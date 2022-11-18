@@ -1,0 +1,1 @@
+export const API_GET_CURRENT_CITY = "http://ip-api.com/json";

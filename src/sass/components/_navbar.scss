@@ -33,11 +33,21 @@
 
         &__pic {
             cursor: pointer;
+            position: relative;
 
             svg {
                 .youtube-text {
                     filter: invert(0.8);
                 }
+            }
+
+            &__country {
+                position: absolute;
+                left: 37%;
+                top: -15%;
+                font-size: 0.7rem;
+                font-weight: 600;
+                color: map-get($colors, "gray");
             }
         }
     }
