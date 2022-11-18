@@ -1,9 +1,15 @@
 $main-red: #ff0000;
 $main-white: #ffffff;
-$main-dark: #282828;
+$main-dark: #0f0f0f;
+$gray: #717171;
+$gray-2: #303030;
+$light-gray: #353535;
 
 $colors: (
     "primary": $main-red,
     "secondary": $main-white,
     "dark": $main-dark,
+    "gray": $gray,
+    "gray-2": $gray-2,
+    "light-gray": $light-gray,
 );

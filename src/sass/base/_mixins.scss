@@ -6,6 +6,29 @@
     #{$prop}: #{$value};
 }
 
+@mixin flex-start-row {
+    @include prefixing(display, flex);
+    @include prefixing(align-items, center);
+}
+
+@mixin flex-end-row {
+    @include prefixing(display, flex);
+    @include prefixing(justify-content, flex-end);
+    @include prefixing(align-items, center);
+}
+
+@mixin flex-around-row {
+    @include prefixing(display, flex);
+    @include prefixing(justify-content, space-around);
+    @include prefixing(align-items, center);
+}
+
+@mixin flex-evenly-row {
+    @include prefixing(display, flex);
+    @include prefixing(justify-content, space-evenly);
+    @include prefixing(align-items, center);
+}
+
 @mixin flex-center-row {
     @include prefixing(display, flex);
     @include prefixing(justify-content, center);
@@ -89,4 +112,28 @@
     } @else if $value == "txt" {
         color: map-get($colors, $name);
     }
+}
+
+@mixin fading-transition($time, $func) {
+    @include prefixing(transition, visibility);
+    @include prefixing(transition, opacity);
+    transition: visibility #{$time}s #{$func}, opacity #{$time}s #{$func};
+}
+
+@mixin show-title {
+    content: attr(data-name-icon);
+    width: max-content;
+    padding: 0.5rem 1.1rem;
+    border-radius: 0.3rem;
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    background-color: map-get($colors, "gray-2");
+    user-select: none;
+    @include fade(hide);
+    @include fading-transition(0.3, ease-in-out);
+    z-index: 999;
 }

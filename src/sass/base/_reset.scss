@@ -24,6 +24,7 @@ html {
 body {
     font-family: $main-font-family;
     overflow-x: hidden;
+    @include coloring(dark, bg);
 }
 
 body::-webkit-scrollbar {
