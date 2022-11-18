@@ -17,14 +17,15 @@ html {
 }
 
 ::selection {
-    color: map-get($colors, "secondary");
-    background-color: map-get($colors, "dark");
+    color: map-get($colors, "dark");
+    background-color: map-get($colors, "secondary");
 }
 
 body {
     font-family: $main-font-family;
     overflow-x: hidden;
     @include coloring(dark, bg);
+    @include coloring("secondary", txt);
 }
 
 body::-webkit-scrollbar {
