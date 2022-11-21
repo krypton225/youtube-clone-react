@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { YoutubeLogo } from "../";
+import YoutubeLogo from "../../assets/svg/youtube-logo.svg";
 
 import { API_GET_CURRENT_CITY } from '../generals/constants';
 
@@ -19,7 +19,7 @@ const MainLogo = () => {
 
     return (
         <div className="navbar__logo__pic" title='Youtube'>
-            <YoutubeLogo />
+            <img src={YoutubeLogo} alt="youtube" />
             <span className="navbar__logo__pic__country">{country}</span>
         </div>
     )

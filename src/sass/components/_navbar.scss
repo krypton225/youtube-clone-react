@@ -1,50 +1,35 @@
 .navbar {
-    width: 100vw;
-    height: 4rem;
-    padding: 0 1.4rem;
-    position: sticky;
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
     top: 0;
     left: 0;
-    @include flex-between-row;
     color: #fff;
 
+    .row {
+        width: 100%;
+        height: 100%;
+        @include flex-between-row;
+    }
+
     &__logo {
-        @include flex-start-row;
-        flex: 1;
-
-        &__hamburger {
-            width: 2.4rem;
-            height: 2.4rem;
-            padding: 1.3rem;
-            border-radius: 50%;
-            @include flex-center-row;
-            margin-right: 1.4rem;
-            cursor: pointer;
-            @include transition(background-color, 0.3, ease-in-out);
-
-            &:hover {
-                background-color: map-get($colors, "light-gray");
-            }
-
-            svg {
-                font-size: 1.9rem;
-            }
-        }
-
         &__pic {
-            cursor: pointer;
+            width: 21%;
             position: relative;
+            cursor: pointer;
 
-            svg {
-                .youtube-text {
-                    filter: invert(0.8);
-                }
+            @include breakpoint(mobile) {
+                width: 22%;
+            }
+
+            img {
+                width: 100% !important;
             }
 
             &__country {
                 position: absolute;
-                left: 37%;
-                top: -15%;
+                right: -33%;
+                top: 12%;
                 font-size: 0.7rem;
                 font-weight: 600;
                 color: map-get($colors, "gray");
@@ -52,113 +37,28 @@
         }
     }
 
-    &__search {
-        width: 100%;
-        @include flex-between-row;
-        flex: 1.2;
-
-        &__container {
-            width: 88%;
-            height: 2.5rem;
-            position: relative;
-            border: 0.01rem solid #303030;
-            border-radius: 2.3rem;
-
-            &__input {
-                width: 100%;
-                height: 100%;
-                border: none;
-                border-radius: 2.3rem;
-                padding-inline-start: 1rem;
-                @include coloring(secondary, txt);
-                background-color: transparent;
-                font-size: 1rem;
-
-                &:focus {
-                    outline: none;
-                }
-
-                &::placeholder {
-                    text-transform: capitalize;
-                }
-            }
-
-            &__btn {
-                width: 15%;
-                height: 100%;
-                border: none;
-                border-radius: 0 2.3rem 2.3rem 0;
-                @include flex-center-row;
-                position: absolute;
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%);
-                cursor: pointer;
-                background-color: map-get($colors, "gray-2");
-                color: #fff;
-                @include transition(background-color, 0.3, ease-in-out);
-
-                &:hover {
-                    background-color: map-get($colors, "light-gray");
-                }
-
-                &::before {
-                    @include show-title;
-                }
-
-                &:hover::before {
-                    @include fade(show);
-                }
-            }
-        }
-
-        &__voice {
-            width: 2.4rem;
-            height: 2.4rem;
-            position: relative;
-            padding: 1.3rem;
-            border-radius: 50%;
-            @include flex-center-row;
-            background-color: darken(map-get($colors, "gray"), 33%);
-            color: map-get($colors, "secondary");
-            cursor: pointer;
-            @include transition(background-color, 0.3, ease-in-out);
-
-            &:hover {
-                background-color: map-get($colors, "light-gray");
-            }
-
-            &::before {
-                @include show-title;
-            }
-
-            &:hover::before {
-                @include fade(show);
-            }
-        }
-    }
-
     &__functions {
+        width: 100%;
         @include flex-end-row;
-        flex: 1;
 
         &__video,
         &__notifications {
-            width: 2.4rem;
-            height: 2.4rem;
+            width: 2rem;
+            height: 2rem;
             position: relative;
-            padding: 1.3rem;
+            padding: 1.4rem;
             border-radius: 50%;
             @include flex-center-row;
             cursor: pointer;
             @include transition(background-color, 0.3, ease-in-out);
 
-            &:hover {
-                background-color: map-get($colors, "light-gray");
+            .demo-icon {
+                font-size: 1.3rem;
+                color: rgb(161, 161, 161);
             }
 
-            svg {
-                font-size: 1.5rem;
+            &:hover {
+                background-color: map-get($colors, "light-gray");
             }
 
             &::before {
@@ -171,7 +71,7 @@
         }
 
         &__notifications {
-            margin-inline: 0.9rem;
+            margin-inline: 1.4rem;
         }
 
         &__avatar {
