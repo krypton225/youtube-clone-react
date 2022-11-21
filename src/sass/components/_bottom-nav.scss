@@ -1,0 +1,47 @@
+.bottom-nav {
+    width: 39%;
+    padding: 0.9rem 2.3rem;
+    border-radius: 1.2rem;
+    position: fixed;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include coloring(gray-2, bg);
+    @include flex-between-row;
+
+    @include breakpoint(tablet) {
+        width: 55%;
+    }
+
+    @include breakpoint(mobile) {
+        width: 85%;
+    }
+
+    &__item {
+        position: relative;
+
+        &::before {
+            @include show-title-top;
+        }
+
+        &:hover::before {
+            @include fade(show);
+        }
+
+        @include breakpoint(tablet) {
+            &::before {
+                content: none;
+            }
+        }
+
+        &-link {
+            @include coloring("gray", txt);
+            font-size: 1.3rem;
+            @include transition(color, 0.3, ease-in);
+        }
+
+        &:hover &-link {
+            color: white;
+        }
+    }
+}
