@@ -9,7 +9,7 @@ import Thumbnail from "./Thumbnail";
 const VideoCard = ({ videoId, channelTitle, publishTime, title, medium }) => {
     useEffect(() => {
         AOS.init({
-            duration: 400
+            duration: 600
         });
     }, []);
 
