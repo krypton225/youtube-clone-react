@@ -42,8 +42,8 @@ const HomePage = () => {
                         {
                             videos.length === 0 ? <Loading />
                                 : videos.map((
-                                    { id: { videoId }, snippet: { channelId, channelTitle, publishTime, thumbnails: { medium }, title } }) => (
-                                    <VideoCard key={videoId} videoId={videoId} channelId={channelId} channelTitle={channelTitle}
+                                    { id: { videoId }, snippet: { channelTitle, publishTime, thumbnails: { medium }, title } }) => (
+                                    <VideoCard key={videoId} videoId={videoId} channelTitle={channelTitle}
                                         publishTime={publishTime} title={title} medium={medium} />
                                 ))
                         }
