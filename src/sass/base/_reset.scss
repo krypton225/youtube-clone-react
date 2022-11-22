@@ -40,7 +40,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     height: 12rem;
     border-radius: 4.5rem;
-    background-color: darken(map-get($colors, "primary"), 13%);
+    background-color: darken(map-get($colors, "gray"), 13%);
 }
 
 a {
