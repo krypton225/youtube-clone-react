@@ -3,18 +3,20 @@
     padding: 0.9rem 2.3rem;
     border-radius: 1.2rem;
     position: fixed;
-    bottom: 7%;
+    bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
     @include coloring(gray-2, bg);
     @include flex-between-row;
+    z-index: 99999;
 
     @include breakpoint(tablet) {
         width: 55%;
     }
 
     @include breakpoint(mobile) {
-        width: 85%;
+        width: 95%;
+        bottom: 2%;
     }
 
     &__item {
