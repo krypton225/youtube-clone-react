@@ -1,0 +1,36 @@
+.error {
+    width: 100%;
+    height: 100vh;
+    text-transform: capitalize;
+
+    .row {
+        width: 100%;
+        height: 100%;
+        @include flex-center-column;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 400;
+        color: map-get($colors, "gray");
+
+        @include breakpoint(mobile) {
+            font-size: 2.3rem;
+        }
+    }
+
+    &__btn {
+        width: fit-content;
+        padding: 0.6rem 2rem;
+        border: 0.18rem solid lighten(map-get($colors, "gray"), 10%);
+        border-radius: 0.6rem;
+        display: block;
+        margin-top: 1.7rem;
+        color: map-get($colors, "gray");
+        @include transition(color, 0.3, ease-in);
+
+        &:hover {
+            color: map-get($colors, "secondary");
+        }
+    }
+}
