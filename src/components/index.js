@@ -9,3 +9,5 @@ export { default as GoToTop } from "./go-to-top/GoToTop";
 export { default as HomePage } from "./home/HomePage";
 
 export { default as VideoCard } from "./home/VideoCard";
+
+export { default as ErrorTitle } from "./error/ErrorTitle";
