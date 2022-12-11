@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 
-import { API_KEY, RAPID_API_KEY } from "../APIs/apiKey";
+import { API_KEY, RAPID_API_KEY } from "../../APIs/apiKey";
 
 import { VideoCard } from "../";
 

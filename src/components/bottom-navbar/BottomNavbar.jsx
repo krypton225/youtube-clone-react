@@ -1,4 +1,5 @@
-import BottomNavItems from '../data/BottomNavItems';
+import BottomNavItems from '../../data/BottomNavItems';
+
 import BottomListItem from './BottomListItem';
 
 const BottomNavbar = () => {
